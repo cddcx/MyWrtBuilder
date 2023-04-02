@@ -37,7 +37,7 @@ jobs:
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
+      - name: 准备
         uses: actions/checkout@v3
         with: 
           path: origin
