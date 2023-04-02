@@ -50,7 +50,7 @@ jobs:
       - name: 下载外部软件包
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
         run: |
-          cat external-package-urls.txt | xargs wget -P package/linkease
+          cat external-package-urls.txt | xargs wget -P packages
 #          cat external-package-urls.txt | xargs wget -P packages
 
       - name: 运行补丁和 DIY 脚本
