@@ -7,9 +7,9 @@ cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64 || exit
 
 # Remove redundant default packages
 sed -i "/luci-app-cpufreq/d" include/target.mk
-sed -i "luci-app-filetransfer/d" include/target.mk
-sed -i "luci-app-turboacc/d" include/target.mk
-sed -i "automount/d" target/linux/x86/Makefile
+sed -i "/luci-app-filetransfer/d" include/target.mk
+sed -i "/luci-app-turboacc/d" include/target.mk
+sed -i "/automount/d" target/linux/x86/Makefile
 
 # Force opkg to overwrite files
 sed -i "s/install \$(BUILD_PACKAGES)/install \$(BUILD_PACKAGES) --force-overwrite/" Makefile
