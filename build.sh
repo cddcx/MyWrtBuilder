@@ -4,7 +4,7 @@
 make info
 
 # 主配置名称
-PROFILE="ducaixuan"
+PROFILE="generic"
 
 PACKAGES=""
 
