@@ -4,12 +4,12 @@
 make info
 
 # 主配置名称
-PROFILE="generic"
+PROFILE="ducaixuan"
 
 PACKAGES=""
 
 # Argon 主题
-PACKAGES="$PACKAGES luci-theme-argon luci-i18n-argon-config-zh-cn"
+PACKAGES="$PACKAGES luci-theme-argon"
 
 # 常用系统管理组件
 
@@ -72,6 +72,7 @@ PACKAGES="$PACKAGES luci-i18n-opkg-zh-cn luci-i18n-base-zh-cn luci-i18n-firewall
 
 # Packages 文件夹下的 ipk 包
 PACKAGES="$PACKAGES luci-i18n-udpxy-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
 
 # 一些自己需要的内核组件
 PACKAGES="$PACKAGES kmod-usb-printer kmod-lp"
