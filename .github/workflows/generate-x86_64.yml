@@ -29,7 +29,7 @@ jobs:
           sudo apt-get -qq update
           sudo apt-get -qq install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python qemu-utils mkisofs
 
-      - name: 设置环境变量
+      - name: 设置时间
         run: |
           echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
@@ -47,11 +47,12 @@ jobs:
           rm -rf $VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64/
       
-#      - name: 下载外部软件包
-#        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
-#        run: |
+      - name: 下载外部软件包
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
+        run: |
+          cat external-package-urls.txt | xargs wget -P package/linkease
 #          cat external-package-urls.txt | xargs wget -P packages
-       
+
       - name: 运行补丁和 DIY 脚本
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
         run: |
