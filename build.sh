@@ -14,7 +14,8 @@ PACKAGES="$PACKAGES luci-theme-argon"
 # 常用系统管理组件
 
 # 应用市场
-PACKAGES="$PACKAGES luci-app-store"
+#PACKAGES="$PACKAGES luci-app-store"
+
 # Diskman 磁盘管理
 #PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
 # CPU 占用限制
