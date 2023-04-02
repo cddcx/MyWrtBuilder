@@ -61,7 +61,7 @@ PACKAGES="$PACKAGES luci-app-openclash"
 # 网络组件
 
 # EQoS 网速控制
-P#ACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-eqos-zh-cn"
 # 多线多拨与负载均衡
 #PACKAGES="$PACKAGES luci-app-syncdial luci-i18n-mwan3-zh-cn"
 # 宽带监控 Nlbwmon
