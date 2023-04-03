@@ -65,9 +65,9 @@ jobs:
           bash build.sh
           
       - name: 整理固件
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64bin/targets/x86/64
         run: |
-          rm -rf bin/targets/x86/64/*kernel.bin
+          rm -rf *kernel.bin
 
       - name: 上传固件
         uses: actions/upload-artifact@v2
