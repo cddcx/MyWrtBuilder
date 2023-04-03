@@ -27,6 +27,8 @@ PACKAGES="$PACKAGES luci-theme-argon"
 
 # OpenClash 代理
 PACKAGES="$PACKAGES luci-app-openclash"
+# ssr-plus 代理
+PACKAGES="$PACKAGES luci-app-ssr-plus"
 # Passwall 代理
 #PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 # frp 和 nps 内网穿透
