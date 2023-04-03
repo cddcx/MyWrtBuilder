@@ -67,7 +67,12 @@ jobs:
       - name: 整理固件
         id: organize
         run: |
-          rm -rf ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64/bin/targets/x86/64/*kernel.bin
+          cd ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64/bin/targets/x86/64
+          rm -rf *kernel.bin
+          rm -rf *rootfs.img
+          rm -rf *combined.img
+          rm -rf *manifest
+          rm -rf *.json
 
       - name: 上传固件
         uses: actions/upload-artifact@v2
