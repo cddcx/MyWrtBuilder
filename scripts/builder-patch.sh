@@ -15,7 +15,7 @@ sed -i "/luci-app-turboacc/d" include/target.mk
 sed -i "/automount/d" target/linux/x86/Makefile
 
 #修改密码
-sed -i "s/root::0:0:99999:7:::/root:$1$RsaPwq.4$jAo1CF8KJW5fZjY4uSd7f1:19449:0:99999:7:::/g" package/base-files/files/etc/shadow
+#sed -i "s/root::0:0:99999:7:::/root:$1$RsaPwq.4$jAo1CF8KJW5fZjY4uSd7f1:19449:0:99999:7:::/g" package/base-files/files/etc/shadow
 
 # Force opkg to overwrite files
 sed -i "s/install \$(BUILD_PACKAGES)/install \$(BUILD_PACKAGES) --force-overwrite/" Makefile
