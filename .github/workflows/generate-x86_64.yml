@@ -46,7 +46,7 @@ jobs:
           tar -xvf $VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz
           rm -rf $VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64.tar.xz
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64/
-          rm -rf $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64/build_dir/target-x86_64_musl/linux-x86_64/generic-kernel.bin
+          # rm -rf $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-x86-64.Linux-x86_64/build_dir/target-x86_64_musl/linux-x86_64/generic-kernel.bin
       
       # - name: 下载外部软件包
         # working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
@@ -64,6 +64,11 @@ jobs:
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
         run: |
           bash build.sh
+          
+      - name: 整理固件
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64
+        run: |
+          rm -rf bin/targets/x86/64/*kernel.bin
 
       - name: 上传固件
         uses: actions/upload-artifact@v2
