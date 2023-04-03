@@ -20,9 +20,10 @@ sed -i "/automount/d" target/linux/x86/Makefile
 # Force opkg to overwrite files
 sed -i "s/install \$(BUILD_PACKAGES)/install \$(BUILD_PACKAGES) --force-overwrite/" Makefile
 
+sed -i "s/# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan is not set/CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y/" .config
+
 # Not generate ISO images for it is too big
 sed -i "s/CONFIG_ISO_IMAGES=y/# CONFIG_ISO_IMAGES is not set/" .config
-
 sed -i "s/CONFIG_TARGET_ROOTFS_EXT4FS=y/# CONFIG_TARGET_ROOTFS_EXT4FS is not set/" .config
 sed -i "s/CONFIG_QCOW2_IMAGES=y/# CONFIG_QCOW2_IMAGES is not set/" .config
 sed -i "s/CONFIG_VDI_IMAGES=y/# CONFIG_VDI_IMAGES is not set/" .config
