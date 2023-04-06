@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       release: 
-        description: 将编译出的镜像上传到 Release
+        description: '手动触发一次编译'
 
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
